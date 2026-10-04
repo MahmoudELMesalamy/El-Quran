@@ -1,0 +1,225 @@
+/* =========================================================
+   DEDICATION.CSS
+   =========================================================
+   كارت "صدقة جارية": بيظهر في الصفحة الرئيسية بس، بعد النافبار
+   مباشرة. بيستخدم نفس متغيرات الألوان بتاعة التطبيق، فبيتغير
+   تلقائي مع الوضع الفاتح والغامق.
+========================================================= */
+
+.nt-dedication {
+    padding: 34px 0 10px;
+}
+
+.nt-ded-card {
+    position: relative;
+    overflow: hidden;
+
+    width: min(720px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 38px 28px 34px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(213, 180, 106, 0.14), transparent 62%),
+        var(--card);
+    border: 1px solid rgba(213, 180, 106, 0.38);
+    border-radius: 28px;
+    box-shadow: var(--shadow, 0 20px 50px rgba(0, 0, 0, 0.25));
+}
+
+/* إطار داخلي رفيع زي كروت الدعاء */
+.nt-ded-card::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+
+    border: 1px solid rgba(213, 180, 106, 0.2);
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+.nt-ded-card > * {
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   الصورة بين فرعين زيتون
+--------------------------------------------------------- */
+
+.nt-ded-photo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+.nt-ded-branch {
+    width: 52px;
+    height: 118px;
+    flex: none;
+
+    color: var(--green);
+    opacity: 0.9;
+}
+
+.nt-ded-branch.flip {
+    transform: scaleX(-1);
+}
+
+.nt-ded-photo {
+    width: 168px;
+    height: 208px;
+    flex: none;
+
+    padding: 6px;
+
+    background: linear-gradient(145deg, rgba(213, 180, 106, 0.85), rgba(213, 180, 106, 0.25));
+    border-radius: 26px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+
+.nt-ded-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 50% 18%;
+
+    border: 3px solid var(--card);
+    border-radius: 20px;
+}
+
+
+/* ---------------------------------------------------------
+   النصوص
+--------------------------------------------------------- */
+
+.nt-ded-title {
+    margin-bottom: 18px;
+
+    color: var(--gold);
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.nt-ded-title small {
+    display: block;
+
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.nt-ded-text {
+    max-width: 560px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 16.5px;
+    line-height: 2.1;
+}
+
+.nt-ded-text p + p {
+    margin-top: 6px;
+}
+
+.nt-ded-text strong {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.nt-ded-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin: 22px auto 18px;
+    max-width: 300px;
+
+    color: var(--gold);
+    font-size: 15px;
+}
+
+.nt-ded-divider::before,
+.nt-ded-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(213, 180, 106, 0.6));
+}
+
+.nt-ded-divider::after {
+    transform: scaleX(-1);
+}
+
+.nt-ded-closing {
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.nt-ded-heart {
+    margin-top: 6px;
+
+    color: var(--gold);
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   شاشات صغيرة
+--------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    .nt-dedication {
+        padding: 22px 0 6px;
+    }
+
+    .nt-ded-card {
+        padding: 30px 18px 28px;
+        border-radius: 24px;
+    }
+
+    .nt-ded-photo {
+        width: 136px;
+        height: 170px;
+        border-radius: 22px;
+    }
+
+    .nt-ded-photo img {
+        border-radius: 17px;
+    }
+
+    .nt-ded-branch {
+        width: 38px;
+        height: 92px;
+    }
+
+    .nt-ded-photo-row {
+        gap: 8px;
+    }
+
+    .nt-ded-title {
+        font-size: 22px;
+    }
+
+    .nt-ded-title small {
+        font-size: 18px;
+    }
+
+    .nt-ded-text {
+        font-size: 15px;
+    }
+
+}
